@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 自定义标题栏 -->
+  <div class="titlebar">
+    <span class="app-title">🍅 番茄钟</span>
+    <div class="window-controls">
+      <button class="ctrl-btn minimize" id="minimizeBtn" title="最小化">−</button>
+      <button class="ctrl-btn close" id="closeBtn" title="关闭">×</button>
+    </div>
+  </div>
+
+  <!-- 模式标签 -->
+  <div class="mode-tabs">
+    <button class="mode-tab active" data-mode="work">专注</button>
+    <button class="mode-tab" data-mode="short">短休息</button>
+    <button class="mode-tab" data-mode="long">长休息</button>
+  </div>
+
+  <!-- 计时圆圈 -->
+  <div class="timer-container">
+    <svg class="progress-ring" viewBox="0 0 220 220">
+      <circle class="ring-bg" cx="110" cy="110" r="96" />
+      <circle class="ring-fill" id="ringFill" cx="110" cy="110" r="96" />
+    </svg>
+    <div class="timer-display">
+      <div class="time-text" id="timeDisplay">25:00</div>
+      <div class="session-label" id="sessionLabel">专注时间</div>
+    </div>
+  </div>
+
+  <!-- 控制按钮 -->
+  <div class="controls">
+    <button class="ctrl-action" id="resetBtn" title="重置">↺</button>
+    <button class="btn-start" id="startBtn">开始</button>
+    <button class="ctrl-action" id="skipBtn" title="跳过">⏭</button>
+  </div>
+
+  <!-- 番茄计数 -->
+  <div class="tomato-row" id="tomatoRow"></div>
+  <div class="session-count">今日完成：<span id="sessionCount">0</span> 个番茄</div>
+
+  <!-- 设置面板 -->
+  <div class="settings-section">
+    <button class="settings-toggle" id="settingsToggle">⚙ 设置</button>
+    <div class="settings-panel" id="settingsPanel">
+      <div class="setting-row">
+        <label>专注时长</label>
+        <div class="input-group">
+          <button class="adj-btn" data-field="work" data-dir="-1">−</button>
+          <span id="workVal">25</span> 分钟
+          <button class="adj-btn" data-field="work" data-dir="1">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>短休息</label>
+        <div class="input-group">
+          <button class="adj-btn" data-field="short" data-dir="-1">−</button>
+          <span id="shortVal">5</span> 分钟
+          <button class="adj-btn" data-field="short" data-dir="1">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>长休息</label>
+        <div class="input-group">
+          <button class="adj-btn" data-field="long" data-dir="-1">−</button>
+          <span id="longVal">15</span> 分钟
+          <button class="adj-btn" data-field="long" data-dir="1">+</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>声音提醒</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="soundToggle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

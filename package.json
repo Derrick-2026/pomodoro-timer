@@ -1,0 +1,20 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "桌面番茄钟 - Desktop Pomodoro Timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . 番茄钟 --platform=darwin --arch=arm64 --out=dist --overwrite --icon=icon.icns --app-bundle-id=com.pomodoro.timer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@electron/packager": "^20.0.1",
+    "electron": "^42.4.1",
+    "electron-packager": "^17.1.2",
+    "playwright-core": "^1.61.0"
+  }
+}
